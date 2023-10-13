@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{matching_space.name}}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css" >
+</head>
+<body>
+    <div class="toolbar">
+        <!-- Toolbar content -->
+        <a href="/available-spaces">Available spaces</a>
+        <a href="/myaccount">My account</a>
+        <a href="/logout">Log out</a>
+        <!-- Add more links as needed -->
+    </div>
+    <h1>{{matching_space.name}}</h1>
+    <table border="2px solid" width="100%" >
+        <tr>
+            <td width="12%">Description</td>
+            <td>{{matching_space.description}}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>£{{"%.2f"|format(matching_space.price/100)}} per night</td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td>{{matching_space.start_date}}</td>
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td>{{matching_space.end_date}}</td>
+        </tr>
+    </table>
+    <br>
+    <!-- Perhaps have a check price button to see total price before booking -->
+    <form action="/space/{{matching_space.id}}" method="POST">
+        <p>
+            <label for="checkin">Check-in date:</label>
+            <input type="date" id="checkin" name="checkin" value="{{matching_space.start_date}}" min="{{matching_space.start_date}}" max="{{matching_space.end_date}}" />
+        </p>
+        <p>
+            <label for="checkout">Check-out date:</label>
+            <input type="date" id="checkout" name="checkout" value="{{matching_space.start_date}}" min="{{matching_space.start_date}}" max="{{matching_space.end_date}}" />
+        </p>
+        <input class="add_new_space_button-tag" type="submit" value="Book">
+    <form>
+</body>
+</html>

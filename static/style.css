@@ -1,0 +1,146 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F6F9FC; /* light blueish-grey */
+    margin: 10px;
+    color: #333;
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: stretch; /* Center children vertically */
+    flex-direction: column; /* stack children vertically */
+}
+
+h1, h2 {
+    color: #2C3E50; /* dark blue */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+.login_page_buttons-tag, .signup_page_buttons-tag{
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
+
+.t-email, .t-password {
+    text-align: left;
+}
+
+/* Buttons */
+a, input[type="button"], input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #3498DB; /* blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+a:hover, input[type="button"]:hover, input[type="submit"]:hover {
+    background-color: #2980B9; /* darker blue */
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Fields and Form Elements */
+input[type="text"], input[type="date"], input[type="password"] {
+    width: 70%; /* reduced from 100% */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #BDC3C7; /* grey */
+    border-radius: 5px;
+}
+
+label {
+    color: #7F8C8D; /* greyish text */
+}
+
+/* Tables */
+table {
+    width: 80%; /* so it doesn't span the entire width */
+    margin: 10px auto; /* centers the table */
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #BDC3C7; /* grey */
+}
+
+/* Error Messages */
+.error {
+    background-color: #E74C3C; /* red */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Div Classes */
+.t-buttons, .signup_page_buttons-tag, .login_page_buttons-tag, .individual_space-tag {
+    margin-left: 10px; /* Added for alignment as per your request */
+}
+
+.available-spaces-title {
+    text-align: center;
+}
+
+.book_space_button-tag {
+    margin-left: 10px;
+}
+
+.button-container{
+    text-align: center;
+    
+}
+
+.button-container button{
+    display: inline-bock;
+}
+
+table {
+    width: 80%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2); /* Small shadow */
+}
+
+input[type="date"] {
+    width: 10%; /* Adjust the width as needed */
+}
+
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3498DB;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid black; /* Add a black border to the bottom */
+}
+
+/* Optional: Add more styling to toolbar elements */
+.toolbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Add space below the toolbar to prevent content from being hidden behind it */
+body {
+    margin-top: 50px;
+}
+
+.section-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section {
+    width: 48%; /* Adjust the width as needed */
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Spaces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css" >
+</head>
+<body>
+    <div class="toolbar">
+        <!-- Toolbar content -->
+        <a href="/available-spaces">Available spaces</a>
+        <a href="/myaccount">My account</a>
+        <a href="/logout">Log out</a>
+        <!-- Add more links as needed -->
+    </div>
+    <h1>Hello {{current_user.name}}, welcome to MakersBnB!</h1>
+    <h2 class="available-spaces-title">Available Spaces</h2>
+    <div>
+        <div class="button-container">
+            <p><input type="button" id="add_new_space" onclick="location.href='/new-space';" value="Add a new space" /></p>
+        </div>
+            {% for space in spaces %}
+            <div class="individual_space-tag">
+                <table border="2px solid" width="100%" >
+                    <tr>
+                        <td width="12%">Name</td>
+                        <td> {{space.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td>{{space.description}}</td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>£{{"%.2f"|format(space.price/100)}} per night</td>
+                    </tr>
+                    <tr>
+                        <td>Available from</td>
+                        <td>{{space.start_date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Available till</td>
+                        <td>{{space.end_date}}</td>
+                    </tr>
+                    <tr></tr>
+                </table>
+                <div class="button-container">
+                    <input class="book_space_button-tag" type="button" id="{{space.id}}" onclick="location.href='/space/{{space.id}}';" value="Book" />
+                </div>
+                <br>
+                <br>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
